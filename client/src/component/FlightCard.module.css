@@ -1,0 +1,213 @@
+.card {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 24px;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  border: 1px solid #eef2f7;
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(15, 23, 42, 0.14);
+  border-color: #c8d5e7;
+}
+
+.legs {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.leg {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.legLabel {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #6b7280;
+}
+
+.legContent {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.timeBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 80px;
+}
+
+.time {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0a1f44;
+}
+
+.airport {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.city {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.durationBlock {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+}
+
+.durationLine {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #cbd5e1 0%, #94a3b8 50%, #cbd5e1 100%);
+  transform: translateY(-50%);
+}
+
+.durationLine::before {
+  content: "";
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translate(50%, -50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #64748b;
+  border-top: 2px solid #64748b;
+}
+
+.duration {
+  position: relative;
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  background: white;
+  padding: 0 8px;
+}
+
+.stops {
+  position: relative;
+  font-size: 11px;
+  color: #94a3b8;
+  background: white;
+  padding: 0 4px;
+}
+
+.flightNo {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.priceBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding-left: 24px;
+  border-left: 1px solid #eef2f7;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0a1f44;
+  line-height: 1.2;
+}
+
+.priceLabel {
+  font-size: 11px;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+.selectBtn {
+  background: linear-gradient(135deg, #0a1f44, #2563eb);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.selectBtn:hover {
+  opacity: 0.97;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.26);
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 14px;
+  }
+
+  .legs {
+    gap: 14px;
+  }
+
+  .legContent {
+    gap: 10px;
+  }
+
+  .priceBlock {
+    border-left: none;
+    border-top: 1px solid #eef2f7;
+    padding-left: 0;
+    padding-top: 20px;
+    align-items: stretch;
+  }
+
+  .selectBtn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .legContent {
+    flex-wrap: wrap;
+  }
+
+  .time {
+    font-size: 16px;
+  }
+
+  .airport {
+    font-size: 13px;
+  }
+
+  .durationBlock {
+    width: 100%;
+    min-height: 28px;
+  }
+
+  .price {
+    font-size: 20px;
+  }
+}

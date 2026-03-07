@@ -1,0 +1,139 @@
+.page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f0faf8 0%, #e8f5f2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  padding: 36px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.icon {
+  font-size: 2.5rem;
+  color: #379D93;
+  margin-bottom: 12px;
+}
+
+.header h1 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0F172A;
+}
+
+.header p {
+  margin: 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 8px;
+}
+
+.inputWrap {
+  position: relative;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.inputWrap input {
+  width: 100%;
+  padding: 12px 14px 12px 42px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: border-color 0.2s;
+}
+
+.inputWrap input:focus {
+  outline: none;
+  border-color: #379D93;
+  box-shadow: 0 0 0 2px rgba(55, 157, 147, 0.2);
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #379D93, #2d8a82);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.submitBtn:hover:not(:disabled) {
+  opacity: 0.95;
+}
+
+.submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.footer a {
+  color: #379D93;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 14px;
+    align-items: flex-start;
+  }
+
+  .card {
+    margin-top: 12px;
+    padding: 24px 16px;
+    border-radius: 14px;
+  }
+
+  .header h1 {
+    font-size: 1.3rem;
+  }
+}

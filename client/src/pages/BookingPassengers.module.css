@@ -1,0 +1,272 @@
+.page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f0faf8 0%, #e8f5f2 100%);
+  padding-bottom: 48px;
+}
+
+.banner {
+  background: linear-gradient(135deg, rgba(55, 157, 147, 0.2) 0%, rgba(55, 157, 147, 0.08) 100%);
+  border-bottom: 1px solid rgba(55, 157, 147, 0.2);
+  padding: 20px 20px 24px;
+}
+
+.breadcrumb {
+  font-size: 13px;
+  color: #379D93;
+  text-decoration: none;
+}
+
+.breadcrumb:hover { text-decoration: underline; }
+
+.breadcrumbSep {
+  font-size: 13px;
+  color: #94a3b8;
+  margin: 0 6px;
+}
+
+.breadcrumbCurrent {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 10px 0 0 0;
+}
+
+.titleIcon {
+  color: #379D93;
+}
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 28px 20px 0;
+}
+
+.error {
+  text-align: center;
+  padding: 48px 24px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.error h2 { margin: 0 0 12px 0; color: #0F172A; }
+.error p { margin: 0 0 20px 0; color: #64748b; }
+
+.backBtn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #379D93;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.backBtn:hover { opacity: 0.9; }
+
+.authBanner {
+  background: #fef3c7;
+  border: 1px solid #f59e0b;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.authBanner p { margin: 0 0 12px 0; color: #92400e; }
+
+.authOr {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.loginLink {
+  color: #379D93;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.loginLink:hover { text-decoration: underline; }
+
+.form {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.section {
+  margin-bottom: 28px;
+}
+
+.section h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 16px 0;
+  font-size: 1rem;
+  color: #0F172A;
+}
+
+.section h3 svg { color: #379D93; }
+
+.row {
+  margin-bottom: 16px;
+}
+
+.row label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 6px;
+}
+
+.row input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.row input:focus {
+  outline: none;
+  border-color: #379D93;
+}
+
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.travelerCard {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.travelerCard h4 {
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #379D93, #2d8a82);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submitBtn:hover:not(:disabled) { opacity: 0.95; }
+.submitBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  max-width: 420px;
+  width: 100%;
+}
+
+.modal h3 { margin: 0 0 8px 0; color: #0F172A; }
+.modal p { margin: 0 0 16px 0; color: #64748b; }
+
+.modalPrices {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.modalActions {
+  display: flex;
+  gap: 12px;
+}
+
+.cancelBtn {
+  flex: 1;
+  padding: 12px;
+  background: #f1f5f9;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.confirmBtn {
+  flex: 1;
+  padding: 12px;
+  background: #379D93;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.confirmBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+@media (max-width: 768px) {
+  .banner {
+    padding: 16px 14px 18px;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .container {
+    padding: 20px 14px 0;
+  }
+
+  .form {
+    padding: 20px 16px;
+  }
+
+  .twoCol {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .travelerCard {
+    padding: 14px;
+  }
+}
+
+@media (max-width: 520px) {
+  .modal {
+    padding: 18px 14px;
+  }
+
+  .modalActions {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,356 @@
+.bar {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  padding: 20px 24px;
+  margin-bottom: 28px;
+  overflow: visible;
+}
+
+.bar.compact {
+  padding: 14px 18px;
+  margin: 16px 0 0 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(55, 157, 147, 0.15);
+  border: 1px solid rgba(55, 157, 147, 0.2);
+}
+
+.bar.compact .row {
+  gap: 10px;
+}
+
+.bar.compact .row:first-child {
+  margin-bottom: 10px;
+}
+
+.bar.compact .field label {
+  font-size: 10px;
+  margin-bottom: 4px;
+}
+
+.bar.compact .field input,
+.bar.compact .field select,
+.bar.compact .passengerInput {
+  padding: 8px 10px;
+  font-size: 13px;
+}
+
+.bar.compact .field input:focus,
+.bar.compact .field select:focus {
+  border-color: #379D93;
+  box-shadow: 0 0 0 2px rgba(55, 157, 147, 0.2);
+}
+
+.bar.compact .tripType label {
+  font-size: 12px;
+}
+
+.bar.compact .searchBtn {
+  padding: 8px 20px;
+  font-size: 13px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+.row:first-child {
+  margin-bottom: 16px;
+}
+
+.tripType {
+  display: flex;
+  gap: 20px;
+}
+
+.tripType label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.field {
+  position: relative;
+  flex: 1;
+  min-width: 120px;
+  overflow: visible;
+}
+
+.bar.compact .field {
+  min-width: 100px;
+}
+
+.field label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 14px;
+  background: white;
+  transition: border-color 0.2s;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: #0a1f44;
+  box-shadow: 0 0 0 2px rgba(10, 31, 68, 0.1);
+}
+
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.suggestions li {
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 14px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.suggestions li:last-child {
+  border-bottom: none;
+}
+
+.suggestions li:hover {
+  background: #f0f7ff;
+}
+
+.searchBtn {
+  background: linear-gradient(135deg, #0a1f44, #1e3c72);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.searchBtn:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+.passengerInput {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  cursor: pointer;
+  background: white;
+  font-size: 14px;
+  transition: border-color 0.2s;
+  appearance: none;
+  -webkit-appearance: none;
+  text-align: left;
+  color: inherit;
+}
+
+.passengerInput:hover {
+  border-color: #9ca3af;
+}
+
+.passengerInput:focus {
+  outline: none;
+  border-color: #0a1f44;
+  box-shadow: 0 0 0 2px rgba(10, 31, 68, 0.1);
+}
+
+/* When dropdown is open - highlight the field */
+.field.passengerDropdownOpen .passengerInput {
+  border-color: #0a1f44;
+  box-shadow: 0 0 0 2px rgba(10, 31, 68, 0.1);
+}
+
+.passengerDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
+  min-width: 260px;
+  background: white;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e5e7eb;
+  z-index: 9999;
+}
+
+.passengerDropdown h4 {
+  margin: 0 0 12px 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+
+.passengerDropdown hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 14px 0;
+}
+
+.counterRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.counterRow button {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid #e5e7eb;
+  background: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.counterRow button:hover {
+  background: #f3f4f6;
+}
+
+.classSelect {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.checkboxRow {
+  margin-top: 12px;
+}
+
+.checkboxRow label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.checkboxRow input {
+  width: auto;
+}
+
+.confirmBtn {
+  width: 100%;
+  margin-top: 14px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: #0a1f44;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.confirmBtn:hover {
+  opacity: 0.9;
+}
+
+.checkboxLabel {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  flex-direction: row;
+}
+
+.checkboxLabel input {
+  width: auto;
+}
+
+.noResults {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: 12px 14px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  margin-top: 4px;
+  font-size: 13px;
+  color: #6b7280;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  z-index: 100;
+}
+
+@media (max-width: 900px) {
+  .bar,
+  .bar.compact {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .row {
+    gap: 10px;
+  }
+
+  .field {
+    min-width: 160px;
+  }
+
+  .searchBtn {
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 640px) {
+  .tripType {
+    width: 100%;
+    gap: 12px;
+  }
+
+  .field,
+  .bar.compact .field {
+    min-width: 100%;
+    width: 100%;
+  }
+
+  .searchBtn {
+    width: 100%;
+  }
+
+  .passengerDropdown {
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-width: 0;
+  }
+}
