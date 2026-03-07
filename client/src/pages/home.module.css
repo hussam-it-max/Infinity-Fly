@@ -1,0 +1,171 @@
+.sectionWrap {
+  width: min(1200px, 94%);
+  margin: 0 auto 22px;
+  padding: 18px 2px 4px;
+}
+
+.sectionHeader {
+  max-width: 760px;
+  margin-bottom: 18px;
+}
+
+.kicker {
+  margin: 0 0 8px 0;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.sectionHeader h2 {
+  margin: 0 0 10px 0;
+  color: #0f172a;
+  font-size: clamp(1.45rem, 2.6vw, 2rem);
+  line-height: 1.2;
+}
+
+.sectionHeader p {
+  margin: 0;
+  color: #475569;
+  line-height: 1.65;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.featureCard {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 16px;
+  padding: 18px 16px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-3px);
+  border-color: rgba(55, 157, 147, 0.32);
+  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.12);
+}
+
+.featureIcon {
+  color: #379D93;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.featureCard h3 {
+  margin: 0 0 8px 0;
+  font-size: 1rem;
+  color: #0f172a;
+}
+
+.featureCard p {
+  margin: 0;
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.55;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 14px;
+}
+
+.contactCard,
+.contactInfo {
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 16px;
+  padding: 18px 16px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contactCard:hover,
+.contactInfo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.1);
+}
+
+.contactRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #334155;
+  padding: 10px 0;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.contactRow:last-child {
+  border-bottom: none;
+}
+
+.contactRow svg {
+  color: #379D93;
+  width: 16px;
+}
+
+.contactInfo h3 {
+  margin: 0 0 8px 0;
+  color: #0f172a;
+}
+
+.contactInfo p {
+  margin: 0 0 6px 0;
+  color: #64748b;
+}
+
+.contactBtn {
+  display: inline-flex;
+  margin-top: 12px;
+  text-decoration: none;
+  color: #ffffff;
+  background: linear-gradient(135deg, #379D93, #2d8a82);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 10px 20px rgba(55, 157, 147, 0.26);
+  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contactBtn:hover {
+  opacity: 0.97;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 24px rgba(55, 157, 147, 0.32);
+}
+
+@media (max-width: 980px) {
+  .featuresGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .sectionWrap {
+    width: 94%;
+    margin-bottom: 16px;
+    padding-top: 8px;
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .featureCard,
+  .contactCard,
+  .contactInfo {
+    border-radius: 14px;
+    padding: 14px;
+  }
+}

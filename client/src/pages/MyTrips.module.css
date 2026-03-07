@@ -1,0 +1,151 @@
+.page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f0faf8 0%, #e8f5f2 100%);
+  padding-bottom: 48px;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 20px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 24px 0;
+}
+
+.titleIcon {
+  color: #379D93;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+  gap: 16px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #379D93;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 12px;
+  padding: 20px;
+  color: #991b1b;
+}
+
+.empty {
+  text-align: center;
+  padding: 60px 24px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.emptyIcon {
+  font-size: 3rem;
+  color: #94a3b8;
+  margin-bottom: 16px;
+}
+
+.empty p {
+  margin: 0 0 20px 0;
+  color: #64748b;
+}
+
+.searchBtn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #379D93;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.searchBtn:hover {
+  opacity: 0.95;
+}
+
+.tripList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tripCard {
+  display: block;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s;
+}
+
+.tripCard:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.tripRoute {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #0F172A;
+  margin-bottom: 8px;
+}
+
+.tripMeta {
+  display: flex;
+  gap: 16px;
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.tripStatus {
+  font-size: 12px;
+  font-weight: 600;
+  color: #379D93;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 18px 14px;
+  }
+
+  .title {
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+  }
+
+  .tripCard {
+    padding: 14px;
+  }
+
+  .tripMeta {
+    flex-direction: column;
+    gap: 6px;
+    font-size: 13px;
+  }
+}
