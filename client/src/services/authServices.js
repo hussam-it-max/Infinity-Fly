@@ -13,6 +13,6 @@ export const logout = handleApiError(() =>
   apiPost("/auth/logout", {})
 );
 
-export const getCurrentUser = handleApiError(() =>
+export const getCurrentUser = () =>
   apiGet("/auth/me")
-);
+;
