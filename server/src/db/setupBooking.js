@@ -12,6 +12,10 @@ DO $$ BEGIN
   CREATE TYPE booking_status AS ENUM ('PENDING','PAYMENT_PENDING','PAID','CONFIRMED','FAILED');
 EXCEPTION WHEN duplicate_object THEN null;
 END $$;
+DO $$ BEGIN
+  ALTER TYPE booking_status ADD VALUE 'EXPIRED';
+EXCEPTION WHEN duplicate_object THEN null;
+END $$;
 
 DO $$ BEGIN
   CREATE TYPE passenger_type AS ENUM ('ADULT','CHILD','INFANT');
@@ -20,6 +24,24 @@ END $$;
 
 DO $$ BEGIN
   CREATE TYPE ticket_status AS ENUM ('ISSUED','CANCELLED','REFUNDED');
+EXCEPTION WHEN duplicate_object THEN null;
+END $$;
+
+DO $$ BEGIN
+  CREATE TYPE payment_status AS ENUM ('PENDING','SUCCESS','FAILED');
+EXCEPTION WHEN duplicate_object THEN null;
+END $$;
+DO $$ BEGIN
+  ALTER TYPE payment_status ADD VALUE 'REFUNDED';
+EXCEPTION WHEN duplicate_object THEN null;
+END $$;
+
+DO $$ BEGIN
+  CREATE TYPE payment_method AS ENUM ('CREDIT_CARD','DEBIT_CARD','PAYPAL','BANK_TRANSFER');
+EXCEPTION WHEN duplicate_object THEN null;
+END $$;
+DO $$ BEGIN
+  ALTER TYPE payment_method ADD VALUE 'UNKNOWN';
 EXCEPTION WHEN duplicate_object THEN null;
 END $$;
 
@@ -97,6 +119,18 @@ CREATE TABLE IF NOT EXISTS tickets (
   ticket_number VARCHAR(20) UNIQUE NOT NULL,
   seat_number VARCHAR(5),
   fare_class VARCHAR(5)
+);
+
+-- Payments
+CREATE TABLE IF NOT EXISTS payments (
+  id SERIAL PRIMARY KEY,
+  booking_id INT REFERENCES bookings(id) ON DELETE CASCADE,
+  amount NUMERIC(10,2) NOT NULL,
+  currency CHAR(3) NOT NULL,
+  status payment_status DEFAULT 'PENDING',
+  method payment_method NOT NULL,
+  transaction_id VARCHAR(100),
+  paid_at TIMESTAMP
 );
 `;
 

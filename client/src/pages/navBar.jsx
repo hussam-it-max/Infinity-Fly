@@ -3,7 +3,7 @@ import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlaneDeparture, faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
-import { getCurrentUser, logout } from "../services/authServices";
+import { getCurrentUser, hasAuthHint, logout } from "../services/authServices";
 import { toast } from "react-toastify";
 
 const NavBar = () => {
@@ -40,6 +40,16 @@ const NavBar = () => {
     let cancelled = false;
 
     const checkAuth = async () => {
+      const forceCheckPaths = ["/my-trips", "/payment", "/booking"];
+      const forceCheck = forceCheckPaths.some((path) => location.pathname.startsWith(path));
+      if (!hasAuthHint() && !forceCheck) {
+        if (!cancelled) {
+          setIsAuthenticated(false);
+          setAuthChecked(true);
+        }
+        return;
+      }
+
       try {
         await getCurrentUser();
         if (!cancelled) setIsAuthenticated(true);
@@ -55,7 +65,7 @@ const NavBar = () => {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [location.pathname]);
 
   const handleLogout = async () => {
     if (loggingOut) return;

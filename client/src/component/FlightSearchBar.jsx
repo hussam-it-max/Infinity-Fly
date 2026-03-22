@@ -5,7 +5,7 @@ import airportsData from "../data/airports.json";
 import { getAirportLabel } from "../utils/flightHelpers";
 import styles from "./FlightSearchBar.module.css";
 
-const MAX_SUGGESTIONS = 15;
+const MAX_SUGGESTIONS = 20;
 
 function searchAirports(keyword) {
   const k = (keyword || "").trim().toLowerCase();
@@ -17,7 +17,13 @@ function searchAirports(keyword) {
       const code = (a.iataCode || "").toLowerCase();
       const name = (a.name || "").toLowerCase();
       const city = (a.address?.cityName || "").toLowerCase();
-      const match = code.includes(k) || name.includes(k) || city.includes(k);
+      const country = (a.address?.countryName || "").toLowerCase();
+      const match =
+        code.startsWith(k) ||
+        code.includes(k) ||
+        name.includes(k) ||
+        city.includes(k) ||
+        country.includes(k);
       if (match) seen.add(a.iataCode);
       return match;
     })
@@ -176,7 +182,7 @@ export default function FlightSearchBar({ params = {}, onSearch, compact }) {
           code={originCode}
           suggestions={originSuggestions}
           isOpen={activeField === "origin"}
-          onInput={(v) => { setOriginLabel(v); setOriginCode(""); }}
+          onInput={(v) => { setOriginLabel(v); setOriginCode(""); setActiveField("origin"); }}
           onSelect={(a) => {
             setOriginLabel(`${a.address?.cityName} (${a.iataCode})`);
             setOriginCode(a.iataCode);
@@ -192,7 +198,7 @@ export default function FlightSearchBar({ params = {}, onSearch, compact }) {
           code={destCode}
           suggestions={destSuggestions}
           isOpen={activeField === "dest"}
-          onInput={(v) => { setDestLabel(v); setDestCode(""); }}
+          onInput={(v) => { setDestLabel(v); setDestCode(""); setActiveField("dest"); }}
           onSelect={(a) => {
             setDestLabel(`${a.address?.cityName} (${a.iataCode})`);
             setDestCode(a.iataCode);

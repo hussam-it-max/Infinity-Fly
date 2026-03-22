@@ -17,6 +17,14 @@ export default function BookingConfirmation() {
           {bookingId && (
             <p className={styles.bookingId}>Reference: #{bookingId}</p>
           )}
+          {bookingId && (
+            <Link
+              to={`/payment?bookingId=${bookingId}&returnTo=${encodeURIComponent("/")}`}
+              className={styles.payBtn}
+            >
+              Pay for your ticket now
+            </Link>
+          )}
           <Link to="/flights" className={styles.btn}>Search more flights</Link>
           <Link to="/" className={styles.link}>Back to home</Link>
         </div>

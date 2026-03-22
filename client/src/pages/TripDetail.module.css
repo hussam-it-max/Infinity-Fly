@@ -284,6 +284,27 @@
   color: #64748b;
 }
 
+.payBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin-top: 6px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #379d93, #2f8d84);
+  box-shadow: 0 8px 20px rgba(55, 157, 147, 0.25);
+  transition: transform 0.15s ease, opacity 0.2s ease;
+}
+
+.payBtn:hover {
+  transform: translateY(-1px);
+  opacity: 0.96;
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 16px 14px;

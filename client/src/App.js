@@ -11,6 +11,7 @@ import TripDetail from "./pages/TripDetail";
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import Payment from "./pages/payment";
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/my-trips" element={<MyTrips />} />
         <Route path="/my-trips/:id" element={<TripDetail />} />
-      </Routes>
+        <Route path="/payment" element={<Payment />}/>      </Routes>
       <ToastContainer
         position="top-right"
         autoClose={5000}
