@@ -55,6 +55,21 @@
 
 .btn:hover { opacity: 0.9; }
 
+.payBtn {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 12px 24px;
+  background: #0f172a;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.payBtn:hover {
+  opacity: 0.92;
+}
+
 .link {
   display: block;
   margin-top: 12px;

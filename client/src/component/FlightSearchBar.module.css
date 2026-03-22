@@ -1,5 +1,6 @@
 .bar {
   position: relative;
+  z-index: 50;
   background: white;
   border-radius: 16px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
@@ -129,7 +130,7 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
   max-height: 200px;
   overflow-y: auto;
-  z-index: 100;
+  z-index: 9999;
 }
 
 .suggestions li {
@@ -308,7 +309,7 @@
   font-size: 13px;
   color: #6b7280;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  z-index: 100;
+  z-index: 9999;
 }
 
 @media (max-width: 900px) {

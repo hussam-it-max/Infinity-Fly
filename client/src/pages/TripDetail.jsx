@@ -69,6 +69,8 @@ export default function TripDetail() {
   const routeLabel = firstDep && firstArr
     ? `${getAirportCity(firstDep.iataCode)} (${firstDep.iataCode}) -> ${getAirportCity(firstArr.iataCode)} (${firstArr.iataCode})`
     : "Your trip";
+  const paidStatuses = ["PAID", "CONFIRMED"];
+  const isPaidBooking = paidStatuses.includes(String(trip.status || "").toUpperCase());
 
   const renderSegment = (seg) => (
     <div key={seg?.id || seg?.departure?.at} className={styles.segment}>
@@ -158,7 +160,17 @@ export default function TripDetail() {
             <h2>Booking info</h2>
             <div className={styles.info}>
               <span>Booked: {formatDate(trip.created_at)}</span>
-              <span>Expires: {trip.expiration ? new Date(trip.expiration).toLocaleString() : "—"}</span>
+              {!isPaidBooking && (
+                <span>Expires: {trip.expiration ? new Date(trip.expiration).toLocaleString() : "—"}</span>
+              )}
+              {!isPaidBooking && (
+                <Link
+                  to={`/payment?bookingId=${trip.id}&returnTo=${encodeURIComponent(`/my-trips/${trip.id}`)}`}
+                  className={styles.payBtn}
+                >
+                  Pay for your ticket
+                </Link>
+              )}
             </div>
           </section>
         </div>

@@ -66,6 +66,10 @@ class AmadeusService {
       throw error; // Throw error so it can be caught and handled
     }
   }
+  async getFlightOrder(orderId) {
+    const response = await this.amadeus.booking.flightOrder(orderId).get();
+    return response.data;
+  }
   /*handleAmadeusError(error) {
     if (error.ClientError?.response?.Response?.headers) {
       return new Error(error.ClientError?.response?.Response?.headers);

@@ -30,6 +30,7 @@ export default function SearchFlights() {
   const nonStop = searchParams.get("nonStop") === "true";
   const tripType = searchParams.get("tripType");
   const returnDate = searchParams.get("returnDate");
+  const hasSearchParams = Boolean(originLocationCode && destinationLocationCode && departureDate);
 
   const searchParamsObj = {
     originLocationCode,
@@ -86,12 +87,15 @@ export default function SearchFlights() {
       }
     };
 
-    if (originLocationCode && destinationLocationCode && departureDate) {
+    if (hasSearchParams) {
       fetchFlights();
     } else {
-      setError("Missing required search parameters");
+      setError(null);
+      setFlights([]);
+      setSearchId(null);
     }
   }, [
+    hasSearchParams,
     originLocationCode,
     destinationLocationCode,
     departureDate,
